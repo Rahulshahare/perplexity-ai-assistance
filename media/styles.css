@@ -1,0 +1,73 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--vscode-font-family);
+    color: var(--vscode-foreground);
+    background-color: var(--vscode-editor-background);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+}
+
+#chat-container {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    border: 1px solid var(--vscode-input-border);
+    border-radius: 4px;
+    padding: 10px;
+    background-color: var(--vscode-input-background);
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 8px;
+    border-radius: 4px;
+    line-height: 1.4;
+}
+
+.message.user {
+    background-color: var(--vscode-button-background);
+    color: var(--vscode-button-foreground);
+}
+
+.message.assistant {
+    background-color: var(--vscode-input-background);
+    border: 1px solid var(--vscode-input-border);
+}
+
+.message.error {
+    background-color: var(--vscode-errorBackground);
+    color: var(--vscode-errorForeground);
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+}
+
+#question-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--vscode-input-border);
+    border-radius: 4px;
+    background-color: var(--vscode-input-background);
+    color: var(--vscode-input-foreground);
+}
+
+#send-button {
+    padding: 8px 16px;
+    border: 1px solid var(--vscode-button-border);
+    border-radius: 4px;
+    background-color: var(--vscode-button-background);
+    color: var(--vscode-button-foreground);
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: var(--vscode-button-hoverBackground);
+}
