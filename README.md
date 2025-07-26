@@ -2,7 +2,23 @@
 
 This is the README for your extension "perplexity-ai-assistance". After writing up a brief description, we recommend including the following sections.
 
-## Features
+## Project structure
+perplexity-ai-assistant/
+├── .vscode/
+│   ├── extension.js
+│   └── launch.json
+├── .gitignore
+|── .vscode-test.mjs
+├── .vscodeignore
+├── CHANGELOG.md
+├── eslint.config.mjs
+├── extension.js
+|── jsconfig.json
+├── package-lock.json
+├── package.json
+├── README.md
+└── vsc-extension-quickstart.md
+
 
 Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 

@@ -9,13 +9,64 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
-  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./src/extension.js",
   "contributes": {
-    "commands": [{
-      "command": "perplexity-ai-assistance.helloWorld",
-      "title": "Hello World"
-    }]
+    "commands": [
+      {
+        "command": "perplexity-ai.askQuestion",
+        "title": "Perplexity: Ask Question"
+      },
+      {
+        "command": "perplexity-ai.explainCode",
+        "title": "Perplexity: Explain Selected Code"
+      },
+      {
+        "command": "perplexity-ai.generateDocumentation",
+        "title": "Perplexity: Generate Documentation"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "perplexity-ai-sidebar",
+          "title": "Perplexity AI",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "perplexity-ai-sidebar": [
+        {
+          "id": "perplexity-ai.chat",
+          "name": "Chat",
+          "type": "webview"
+        }
+      ]
+    },
+    "configuration": [
+      {
+        "title": "Perplexity AI",
+        "properties": {
+          "perplexity-ai.apiKey": {
+            "type": "string",
+            "default": "",
+            "description": "Your Perplexity API key"
+          },
+          "perplexity-ai.model": {
+            "type": "string",
+            "default": "pplx-7b-online",
+            "enum": [
+              "pplx-7b-online",
+              "pplx-70b-online"
+            ],
+            "description": "Perplexity model to use"
+          }
+        }
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
@@ -23,11 +74,17 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.102.0",
+    "@types/glob": "9.0.0",
     "@types/mocha": "^10.0.10",
-    "@types/node": "20.x",
-    "eslint": "^9.25.1",
+    "@types/node": "^20.19.9",
+    "@types/vscode": "^1.102.0",
     "@vscode/test-cli": "^0.0.11",
-    "@vscode/test-electron": "^2.5.2"
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "glob": "11.0.3",
+    "mocha": "11.7.1"
+  },
+  "dependencies": {
+    "axios": "^1.11.0"
   }
 }
